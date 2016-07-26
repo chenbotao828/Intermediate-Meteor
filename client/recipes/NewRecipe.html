@@ -1,0 +1,10 @@
+<template name = "NewRecipe">
+    <div class="new-recipe-container">
+        <i class="fa fa-close"></i>
+        {{> quickForm collection="Recipes" id = "insertRecipeFrom" type = "insert" class = "new-recipe-form" buttonContent="提交"}}
+    </div>
+</template>
+
+<template name= "EditRecipeForm">
+    {{> quickForm collection="Recipes" id=this._id type="update" doc=this autosave=true buttonContent="提交" schema=RecipeSchema}}
+</template>

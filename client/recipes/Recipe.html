@@ -1,0 +1,26 @@
+  <template name="Recipe">
+    <article class="recipe {{#if inMenu}}in-menu{{/if}}" id="{{_id}}">
+        <h3>
+            {{name}}
+        </h3>
+            <i class="fa fa-pencil"></i>
+            <i class="fa fa-trash"></i>
+        {{#if editMode}}{{> EditRecipeForm}}{{else}}
+            <p>{{desc}}</p>
+            <p>
+                {{#each ingredients}}
+                    <span class="ingredient">
+                        {{name}} - {{amount}}
+                    </span>
+                {{/each}}
+            </p>
+            <a href="/recipe/{{_id}}">查看详细</a>
+            {{#if inMenu }}
+                <button class="btn-deny toggle-menu">从菜单删除</button>
+            {{else}}
+                <button class="btn-primary toggle-menu">添加到菜单</button>
+            {{/if}}
+        {{/if}}
+    </article>
+</template>
+

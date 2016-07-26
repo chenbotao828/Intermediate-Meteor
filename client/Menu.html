@@ -1,0 +1,15 @@
+<template name="Menu">
+    <h1 class="page-title">当前的菜单</h1>
+    {{#each recipes}}
+        {{> MenuItem}}
+    {{else}}
+        <h3>请在<a href="/recipe-book">菜谱书</a>中点菜</h3>
+    {{/each}}
+</template>
+
+<template name = "MenuItem">
+    <div class="menu-item">
+        <h3>{{name}}</h3>
+        <p>{{desc}}</p>
+    </div>
+</template>
